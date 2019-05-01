@@ -1,9 +1,9 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
-/.pnp
-.pnp.js
+app/node_modules
+app/.pnp
+app/.pnp.js
 
 # testing
 /coverage
@@ -23,6 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 
 venv/*
-*.pyc*
-__pycache__
+api/*.pyc*
+api/__pycache__
 .idea
