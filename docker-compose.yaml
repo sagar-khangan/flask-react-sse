@@ -1,0 +1,26 @@
+version: '3.5'
+
+services:
+   redis:
+     container_name: blog_redis
+     image: redis
+   api:
+    container_name: blog_api
+    build:
+      context: .
+      dockerfile: api/Dockerfile
+    volumes:
+      - './api:/api'
+    ports:
+      - '5000:5000'
+    depends_on:
+      - redis
+   app:
+    container_name: blog_app
+    build:
+      context: .
+      dockerfile: app/Dockerfile
+    volumes:
+      - './app:/app'
+    ports:
+      - '3000:3000'
